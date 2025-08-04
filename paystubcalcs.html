@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Schedule Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .message-box {
+      background-color: #e0f7fa;
+      padding: 15px;
+      border: 1px solid #81d4fa;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .day-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #fefefe;
+    }
+
+    .day-card label {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    .time-inputs {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .time-inputs input[type="time"] {
+      width: 80px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message-box">
+    Please fill in your preferred schedule. "No lunch" days will not subtract time.
+  </div>
+
+  <form id="schedule-form">
+    <h2>Week 1</h2>
+    <div class="week-grid">
+      <div class="day-card"><strong>Monday</strong>
+        <label>From: <input type="time" name="w1-Monday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w1-Monday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w1-Monday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="1" data-day="Monday"></div>
+      </div>
+      <div class="day-card"><strong>Tuesday</strong>
+        <label>From: <input type="time" name="w1-Tuesday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w1-Tuesday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w1-Tuesday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="1" data-day="Tuesday"></div>
+      </div>
+      <div class="day-card"><strong>Wednesday</strong>
+        <label>From: <input type="time" name="w1-Wednesday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w1-Wednesday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w1-Wednesday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="1" data-day="Wednesday"></div>
+      </div>
+      <div class="day-card"><strong>Thursday</strong>
+        <label>From: <input type="time" name="w1-Thursday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w1-Thursday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w1-Thursday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="1" data-day="Thursday"></div>
+      </div>
+      <div class="day-card"><strong>Friday</strong>
+        <label>From: <input type="time" name="w1-Friday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w1-Friday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w1-Friday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="1" data-day="Friday"></div>
+      </div>
+    </div>
+
+    <h2>Week 2</h2>
+    <div class="week-grid">
+      <div class="day-card"><strong>Monday</strong>
+        <label>From: <input type="time" name="w2-Monday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w2-Monday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w2-Monday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="2" data-day="Monday"></div>
+      </div>
+      <div class="day-card"><strong>Tuesday</strong>
+        <label>From: <input type="time" name="w2-Tuesday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w2-Tuesday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w2-Tuesday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="2" data-day="Tuesday"></div>
+      </div>
+      <div class="day-card"><strong>Wednesday</strong>
+        <label>From: <input type="time" name="w2-Wednesday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w2-Wednesday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w2-Wednesday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="2" data-day="Wednesday"></div>
+      </div>
+      <div class="day-card"><strong>Thursday</strong>
+        <label>From: <input type="time" name="w2-Thursday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w2-Thursday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w2-Thursday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="2" data-day="Thursday"></div>
+      </div>
+      <div class="day-card"><strong>Friday</strong>
+        <label>From: <input type="time" name="w2-Friday-start" value="09:00"></label>
+        <label>To: <input type="time" name="w2-Friday-end" value="17:00"></label>
+        <label><input type="checkbox" name="w2-Friday-nolunch"> No lunch</label>
+        <div class="hours-result" data-week="2" data-day="Friday"></div>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+
+    <label for="payRate">Pay Rate ($/hr):</label>
+    <input type="number" id="payRate" name="payRate" step="0.01" min="0" value="19.30">
+
+  </form>
+
+  <div id="results-box" class="message-box" style="display: none;"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("schedule-form");
+      const resultsBox = document.getElementById("results-box");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let totalWeek1 = 0;
+        let totalWeek2 = 0;
+
+        let payrate = parseFloat(form.querySelector(`[name="payRate"]`).value)
+
+        for (let week = 1; week <= 2; week++) {
+          ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].forEach(day => {
+            const startInput = form.querySelector(`[name="w${week}-${day}-start"]`);
+            const endInput = form.querySelector(`[name="w${week}-${day}-end"]`);
+            const noLunchCheckbox = form.querySelector(`[name="w${week}-${day}-nolunch"]`);
+            const resultDiv = form.querySelector(
+              `.hours-result[data-week="${week}"][data-day="${day}"]`
+            ) || document.createElement("div");
+
+            if (startInput.value && endInput.value) {
+              const [startH, startM] = startInput.value.split(":").map(Number);
+              const [endH, endM] = endInput.value.split(":").map(Number);
+              let diff = (endH * 60 + endM) - (startH * 60 + startM);
+
+              if (diff > 0) {
+                if (!noLunchCheckbox.checked) {
+                  diff -= 30; // 30 minutes for lunch
+                }
+                diff = Math.max(0, diff); // prevent negative
+                const hours = diff / 60;
+
+                // update each day box with calculated hours
+                if (resultDiv) {
+                  resultDiv.textContent = `Total worked hours: ${hours.toFixed(2)}`;
+                }
+
+                if (week === 1) totalWeek1 += hours;
+                else totalWeek2 += hours;
+              }
+            }
+          });
+        }
+
+        resultsBox.style.display = "block";
+        resultsBox.innerHTML = `
+          <strong>Summary:</strong><br>
+          Week 1 Total Hours: <strong>${totalWeek1.toFixed(3)}</strong><br>
+          Week 2 Total Hours: <strong>${totalWeek2.toFixed(3)}</strong><br>
+          Total Pay: <strong>$${((totalWeek1 + totalWeek2) * payrate).toFixed(3)}</strong> (assuming $${payrate.toFixed(3)}/hour)
+        `;
+      });
+    });
+  </script>
+
+</body>
+</html>
